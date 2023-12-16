@@ -69,8 +69,8 @@ class ApplyStyle:
 
         return {
             "required": {
-                "positive_prompt": ("STRING", {"forceInput": True, "multiline": True}),
-                "negative_prompt": ("STRING", {"forceInput": True, "multiline": True}),
+                "positive_prompt": ("STRING", {"multiline": True}),
+                "negative_prompt": ("STRING", {"multiline": True}),
                 "style": ((style_names),),
                 "apply_negative_style": (
                     "BOOLEAN",
