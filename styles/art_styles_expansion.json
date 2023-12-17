@@ -1,10 +1,5 @@
 [
     {
-        "name": "bypass",
-        "prompt": "{prompt}",
-        "negative_prompt": ""
-    },
-    {
         "name": "Abstract Expressionism",
         "prompt": "Abstract Expressionism {prompt} , High contrast, minimalistic, colorful, stark, dramatic, expressionism",
         "negative_prompt": "ugly, deformed, noisy, blurry, low contrast, realism, photorealistic"
@@ -45,8 +40,8 @@
         "negative_prompt": "ugly, deformed, noisy, blurry, low contrast"
     },
     {
-        "name": "Avant-garde",
-        "prompt": "Avant-garde {prompt} , unusual, experimental, avant-garde art",
+        "name": "Avantgarde",
+        "prompt": "Avantgarde {prompt} , unusual, experimental, avantgarde art",
         "negative_prompt": "ugly, deformed, noisy, blurry, low contrast"
     },
     {
@@ -231,7 +226,7 @@
     },
     {
         "name": "Knolling Photography",
-        "prompt": "Knolling Photography {prompt} , flat lay photography, object arrangment, knolling photography",
+        "prompt": "Knolling Photography {prompt} , flat lay photography, object arrangement, knolling photography",
         "negative_prompt": "ugly, deformed, noisy, blurry, low contrast"
     },
     {
@@ -261,7 +256,7 @@
     },
     {
         "name": "Marker Drawing",
-        "prompt": "Marker Drawing {prompt} , bold marker lines, visibile paper texture, marker drawing",
+        "prompt": "Marker Drawing {prompt} , bold marker lines, visible paper texture, marker drawing",
         "negative_prompt": "ugly, deformed, noisy, blurry, low contrast, photograph, realistic"
     },
     {
@@ -276,7 +271,7 @@
     },
     {
         "name": "Neo-Baroque",
-        "prompt": "Neo-Baroque {prompt} , ornate and elaborate, dynaimc, Neo-Baroque",
+        "prompt": "Neo-Baroque {prompt} , ornate and elaborate, dynamic, Neo-Baroque",
         "negative_prompt": "ugly, deformed, noisy, blurry, low contrast"
     },
     {

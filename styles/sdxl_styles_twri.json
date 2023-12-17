@@ -1,10 +1,5 @@
 [
     {
-        "name": "bypass",
-        "prompt": "{prompt}",
-        "negative_prompt": ""
-    },
-    {
         "name": "ads-advertising",
         "prompt": "advertising poster style {prompt} . Professional, modern, product-focused, commercial, eye-catching, highly detailed",
         "negative_prompt": "noisy, blurry, amateurish, sloppy, unattractive"

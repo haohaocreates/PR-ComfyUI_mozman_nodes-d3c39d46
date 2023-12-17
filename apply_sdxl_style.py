@@ -50,6 +50,7 @@ def load_style_templates(style_path: pathlib.Path) -> dict[str, Template]:
             negative_prompt=record.get("negative_prompt", ""),
         )
         templates[template.name] = template
+    templates[BYPASS] = BYPASS_TEMPLATE
     return templates
 
 
@@ -63,7 +64,10 @@ class ApplyStyle:
     @classmethod
     def INPUT_TYPES(self):
         style_names = sorted(self.TEMPLATES.keys())
-        style_names.remove(BYPASS)
+        try:
+            style_names.remove(BYPASS)
+        except ValueError:
+            pass
         style_names.insert(0, BYPASS)
 
         return {
@@ -127,13 +131,14 @@ NODE_DEFINITIONS = [
     ("clipdrop_styles.json", "Apply ClipDrop Style"),
     ("fooocus.json", "Apply Fooocus Style"),
     ("art_styles_expansion.json", "Apply Art Style Expansion"),
+    ("technical_documentation.json", "Apply Technical Documentation Style"),
 ]
 
 
 def _setup_classes():
     cwd = pathlib.Path(__file__).parent
     for file_name, display_name in NODE_DEFINITIONS:
-        templates = load_style_templates(cwd / file_name)
+        templates = load_style_templates(cwd / "styles" / file_name)
         class_name = display_name.replace(" ", "")
 
         # create classes dynamically:

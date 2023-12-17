@@ -1,10 +1,5 @@
 [
     {
-        "name": "base",
-        "prompt": "{prompt}",
-        "negative_prompt": ""
-    },
-    {
         "name": "Architecture Blueprint",
         "prompt": "(floor plan: 1.1) architectural sketch style {prompt} . blueprint, oblique, draft, grayscale, flat, scale bars, monochromatic, annotation, hatching",
         "negative_prompt": " photo, messy, 3d, isometric, perspective"
@@ -27,7 +22,7 @@
     {
         "name": "Landscape Plan",
         "prompt": "sketch style landscape plan, (site analysis:1.2), {prompt} (plan view:1.2), draft, hand-drawn, flat, hatching",
-        "negative_prompt": "pencil, hand, messy, 3D model, photo, realistic, brush, isometric, perpective, text"
+        "negative_prompt": "pencil, hand, messy, 3D model, photo, realistic, brush, isometric, perspective, text"
     },
     {
         "name": "Mechanical Sketch",

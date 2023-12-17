@@ -1,4 +1,4 @@
-# Copyright (c) , Manfred Moitzi
+# Copyright (c) 2023, Manfred Moitzi
 # License: MIT License
 import pytest
 import re
@@ -23,7 +23,12 @@ def test_valid_class_names():
 
 def test_classes_have_templates():
     for cls in NODE_CLASS_MAPPINGS.values():
-        assert len(cls.TEMPLATES) > 1
+        assert len(cls.TEMPLATES) > 1, "no styles loaded - correct filename?"
+
+def test_templates_have_bypass_style():
+    """The style "bypass" will be added automatically to every style file."""
+    for cls in NODE_CLASS_MAPPINGS.values():
+        assert "bypass" in cls.TEMPLATES, "required 'bypass' style not found"
 
 
 if __name__ == "__main__":

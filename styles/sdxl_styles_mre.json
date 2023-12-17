@@ -1,10 +1,5 @@
 [
     {
-        "name": "bypass",
-        "prompt": "{prompt}",
-        "negative_prompt": ""
-    },
-    {
         "name": "mre-cinematic-dynamic",
         "prompt": "epic cinematic shot of dynamic {prompt} in motion. main subject of high budget action movie. raw photo, motion blur. best quality, high resolution",
         "negative_prompt": "static, still, motionless, sluggish. drawing, painting, illustration, rendered. low budget. low quality, low resolution"

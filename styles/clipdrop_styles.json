@@ -1,10 +1,5 @@
 [
     {
-        "name": "bypass",
-        "prompt": "{prompt}",
-        "negative_prompt": ""
-    },
-    {
         "name": "Anime",
         "prompt": "anime artwork {prompt} . anime style, key visual, vibrant, studio anime, highly detailed",
         "negative_prompt": "photo, deformed, black and white, realism, disfigured, low contrast"
