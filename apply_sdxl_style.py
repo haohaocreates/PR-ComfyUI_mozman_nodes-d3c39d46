@@ -56,10 +56,6 @@ def load_style_templates(style_path: pathlib.Path) -> dict[str, Template]:
 
 class ApplyStyle:
     TEMPLATES: dict[str, Template] = {}
-    FILE = ""
-
-    def __str__(self):
-        return f"{self.__class__}, filename={self.FILE}, #styles={len(self.TEMPLATES)}"
 
     @classmethod
     def INPUT_TYPES(self):
@@ -112,7 +108,7 @@ class ApplyStyle:
         if log_prompt:
             line = "-" * 79
             print(line)
-            print(f"Style: {style} from '{self.FILE}' file")
+            print(f"Style: '{style}' from class <{self.__class__.__name__}>")
             print(f"Input Positive: {positive_prompt}")
             print(f"Input Negative: {negative_prompt}")
             print(f"Output Positive: {output_positive}")
@@ -143,7 +139,7 @@ def _setup_classes():
 
         # create classes dynamically:
         NODE_CLASS_MAPPINGS[class_name] = type(
-            class_name, (ApplyStyle,), {"TEMPLATES": templates, "FILE": file_name}
+            class_name, (ApplyStyle,), {"TEMPLATES": templates}
         )
         NODE_DISPLAY_NAME_MAPPINGS[class_name] = display_name
 
