@@ -106,7 +106,7 @@ class ApplyStyle:
             positive_prompt, negative_prompt, apply_negative_style
         )
         if log_prompt:
-            line = "-" * 79 
+            line = "-" * 79
             print(line)
             print(f"Style: {style} from '{self.FILE}' file")
             print(f"Input Positive: {positive_prompt}")
@@ -135,7 +135,7 @@ def _setup_classes():
     for file_name, display_name in NODE_DEFINITIONS:
         templates = load_style_templates(cwd / file_name)
         class_name = display_name.replace(" ", "")
-        
+
         # create classes dynamically:
         NODE_CLASS_MAPPINGS[class_name] = type(
             class_name, (ApplyStyle,), {"TEMPLATES": templates, "FILE": file_name}
@@ -144,12 +144,3 @@ def _setup_classes():
 
 
 _setup_classes()
-
-
-def print_loaded_classes():
-    for name, cls in NODE_CLASS_MAPPINGS.items():
-        print(f"{name}: {cls()}")
-
-
-if __name__ == "__main__":
-    print_loaded_classes()
