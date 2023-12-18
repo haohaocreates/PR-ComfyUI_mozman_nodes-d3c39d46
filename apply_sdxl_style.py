@@ -5,6 +5,7 @@ import pathlib
 import dataclasses
 import json
 
+__all__ = ["setup_nodes"]
 
 BYPASS = "bypass"
 BYPASS_PROMPT = "{prompt}"
@@ -118,8 +119,6 @@ class ApplyStyle:
         return output_positive, output_negative
 
 
-NODE_CLASS_MAPPINGS = {}
-NODE_DISPLAY_NAME_MAPPINGS = {}
 NODE_DEFINITIONS = [
     ("sdxl_styles_sai.json", "Apply SDXL Style SAI"),
     ("sdxl_styles_twri.json", "Apply SDXL Style TWRI"),
@@ -131,17 +130,16 @@ NODE_DEFINITIONS = [
 ]
 
 
-def _setup_classes():
+def setup_nodes(
+    class_mapping: dict[str, type], display_name_mapping: dict[str, str]
+) -> None:
     cwd = pathlib.Path(__file__).parent
     for file_name, display_name in NODE_DEFINITIONS:
         templates = load_style_templates(cwd / "styles" / file_name)
         class_name = display_name.replace(" ", "")
 
         # create classes dynamically:
-        NODE_CLASS_MAPPINGS[class_name] = type(
+        class_mapping[class_name] = type(
             class_name, (ApplyStyle,), {"TEMPLATES": templates}
         )
-        NODE_DISPLAY_NAME_MAPPINGS[class_name] = display_name
-
-
-_setup_classes()
+        display_name_mapping[class_name] = display_name

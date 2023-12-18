@@ -3,11 +3,8 @@
 import pytest
 import re
 
-from .apply_sdxl_style import (
-    NODE_CLASS_MAPPINGS,
-    NODE_DISPLAY_NAME_MAPPINGS,
-    NODE_DEFINITIONS,
-)
+from . import NODE_CLASS_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS
+from .apply_sdxl_style import NODE_DEFINITIONS
 
 
 def test_all_classes_created():
@@ -24,6 +21,7 @@ def test_valid_class_names():
 def test_classes_have_templates():
     for cls in NODE_CLASS_MAPPINGS.values():
         assert len(cls.TEMPLATES) > 1, "no styles loaded - correct filename?"
+
 
 def test_templates_have_bypass_style():
     """The style "bypass" will be added automatically to every style file."""
