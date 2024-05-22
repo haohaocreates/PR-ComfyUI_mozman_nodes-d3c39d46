@@ -1,0 +1,14 @@
+[project]
+name = "comfyui_mozman_nodes"
+description = "This extension provides styler nodes for SDXL.\n\nNOTE: Due to the dynamic nature of node name definitions, ComfyUI-Manager cannot recognize the node list from this extension. The Missing nodes and Badge features are not available for this extension."
+version = "1.0.0"
+license = "LICENSE"
+
+[project.urls]
+Repository = "https://github.com/mozman/ComfyUI_mozman_nodes"
+#  Used by Comfy Registry https://comfyregistry.org
+
+[tool.comfy]
+PublisherId = ""
+DisplayName = "ComfyUI_mozman_nodes"
+Icon = ""
